@@ -55,7 +55,7 @@ npm run test:e2e
 
 ## 📘 API Documentation
 
-API documentation is available via Postman. Import the provided Postman collection to see available endpoints and example requests.
+API documentation is available via Postman. Import the provided [Postman collection](https://raw.githubusercontent.com/YogaNovvaindra/Example-NestJs/main/postman/Example-NestJs.json) to see available endpoints and example requests.
 
 ## 🛠️ Installation
 
