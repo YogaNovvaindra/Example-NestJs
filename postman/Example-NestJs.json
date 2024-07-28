@@ -35,7 +35,7 @@
 				"method": "GET",
 				"header": [],
 				"url": "{{URL}}",
-				"description": "1. Root (GET /)\n    \n\nDescription: Retrieves a simple \"Hello World!\" message.  \nEndpoint: GET /  \nResponse:\n\n- Status: 200 OK\n    \n- Content-Type: text/html\n    \n- Body: \"Hello World!\""
+				"description": "**Root** (GET /)\n\nDescription: Retrieves a simple \"Hello World!\" message.  \nEndpoint: GET /  \nResponse:\n\n- Status: 200 OK\n    \n- Content-Type: text/html\n    \n- Body: \"Hello World!\""
 			},
 			"response": [
 				{
@@ -139,7 +139,8 @@
 						}
 					}
 				},
-				"url": "{{URL}}/auth/register"
+				"url": "{{URL}}/auth/register",
+				"description": "**Register** (POST /auth/register)\n\nDescription: Registers a new user.  \nEndpoint: POST /auth/register  \nRequest Body:\n\n``` json\n{\n    \"email\": \"example@gmail.com\",\n    \"password\": \"password\"\n}\n\n ```\n\nResponse:\n\n- Status: 201 Created\n    \n- Content-Type: application/json\n    \n- Body:\n    \n\n``` json\n{\n    \"message\": \"Login successful\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...\",\n    \"data\": []\n}\n\n ```"
 			},
 			"response": [
 				{
@@ -252,7 +253,8 @@
 						}
 					}
 				},
-				"url": "{{URL}}/auth/login"
+				"url": "{{URL}}/auth/login",
+				"description": "**Login** (POST /auth/login)\n\nDescription: Authenticates a user and returns a token.  \nEndpoint: POST /auth/login  \nRequest Body:\n\n``` json\n{\n    \"email\": \"example@gmail.com\",\n    \"password\": \"password\"\n}\n\n ```\n\nResponse:\n\n- Status: 200 OK\n    \n- Content-Type: application/json\n    \n- Body:\n    \n\n``` json\n{\n    \"message\": \"Login successful\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...\",\n    \"data\": []\n}\n\n ```"
 			},
 			"response": [
 				{
