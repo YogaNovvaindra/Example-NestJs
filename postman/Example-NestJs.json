@@ -812,7 +812,7 @@
 					}
 				},
 				"url": "{{URL}}/comments",
-				"description": "**Create Comment** (POST /comments)\n\nDescription: Creates a new comment for a post.  \nEndpoint: POST /comments  \nAuthentication: Bearer Token  \nRequest Body:\n\n``` json\n{\n    \"postId\": \"{{PostId}}\",\n    \"content\": \"comment 1\"\n}\n\n ```\n\nResponse:\n\n- Status: 201 Created\n    \n- Content-Type: application/json\n    \n- Body:\n    \n\n``` json\n{\n    \"message\": \"Comment created successfully\",\n    \"data\": {\n        \"id\": \"698cc815-d0b0-42df-a976-cd196a9f5f42\",\n        \"content\": \"comment 1\",\n        \"postId\": \"11eeb29f-1d03-4b99-a5c7-b1775035b266\",\n        \"authorId\": \"b51de51f-5537-48c8-9950-f0a0c596a1a2\",\n        \"createdAt\": \"2024-07-28T07:50:12.999Z\",\n        \"updatedAt\": \"2024-07-28T07:50:12.999Z\"\n    }\n}\n\n\n\n ```"
+				"description": "**Create Comment** (POST /comments)\n\nDescription: Creates a new comment for a post.  \nEndpoint: POST /comments  \nAuthentication: Bearer Token  \nRequest Body:\n\n``` json\n{\n    \"postId\": \"ebc2028c-6dd9-4d1d-ab7f-3273ecc88dc7\",\n    \"content\": \"comment 1\"\n}\n\n ```\n\nResponse:\n\n- Status: 201 Created\n    \n- Content-Type: application/json\n    \n- Body:\n    \n\n``` json\n{\n    \"message\": \"Comment created successfully\",\n    \"data\": {\n        \"id\": \"698cc815-d0b0-42df-a976-cd196a9f5f42\",\n        \"content\": \"comment 1\",\n        \"postId\": \"11eeb29f-1d03-4b99-a5c7-b1775035b266\",\n        \"authorId\": \"b51de51f-5537-48c8-9950-f0a0c596a1a2\",\n        \"createdAt\": \"2024-07-28T07:50:12.999Z\",\n        \"updatedAt\": \"2024-07-28T07:50:12.999Z\"\n    }\n}\n\n ```"
 			},
 			"response": [
 				{
@@ -921,7 +921,7 @@
 					}
 				},
 				"url": "{{URL}}/comments/{{CommentId}}",
-				"description": "**Update Comment** (PUT /comments/{commentId})\n\nDescription: Updates an existing comment.  \nEndpoint: PUT /comments/{commentId}  \nAuthentication: Bearer Token  \nRequest Body:\n\n``` json\n{\n    \"postId\": \"{{PostId}}\",\n    \"content\": \"comment apa ini\"\n}\n\n ```\n\nResponse:\n\n- Status: 200 OK\n    \n- Content-Type: application/json\n    \n- Body:\n    \n\n``` json\n{\n    \"message\": \"Comment updated successfully\",\n    \"data\": {\n        \"id\": \"c915cb8e-84e8-4c10-8d44-bf8479b95253\",\n        \"content\": \"comment apa ini\",\n        \"postId\": \"dfff083d-78cc-4d79-9e19-cbd5b921b831\",\n        \"authorId\": \"83218478-a6b3-4a43-9385-9ab4d96d78de\",\n        \"createdAt\": \"2024-07-28T05:09:59.604Z\",\n        \"updatedAt\": \"2024-07-28T05:10:02.882Z\"\n    }\n}\n\n ```"
+				"description": "**Update Comment** (PUT /comments/{commentId})\n\nDescription: Updates an existing comment.  \nEndpoint: PUT /comments/{commentId}  \nAuthentication: Bearer Token  \nRequest Body:\n\n``` json\n{\n    \"postId\": \"ebc2028c-6dd9-4d1d-ab7f-3273ecc88dc7\",\n    \"content\": \"comment apa ini\"\n}\n\n ```\n\nResponse:\n\n- Status: 200 OK\n    \n- Content-Type: application/json\n    \n- Body:\n    \n\n``` json\n{\n    \"message\": \"Comment updated successfully\",\n    \"data\": {\n        \"id\": \"c915cb8e-84e8-4c10-8d44-bf8479b95253\",\n        \"content\": \"comment apa ini\",\n        \"postId\": \"dfff083d-78cc-4d79-9e19-cbd5b921b831\",\n        \"authorId\": \"83218478-a6b3-4a43-9385-9ab4d96d78de\",\n        \"createdAt\": \"2024-07-28T05:09:59.604Z\",\n        \"updatedAt\": \"2024-07-28T05:10:02.882Z\"\n    }\n}\n\n ```"
 			},
 			"response": [
 				{
