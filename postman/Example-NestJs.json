@@ -478,7 +478,7 @@
 					}
 				},
 				"url": "{{URL}}/posts",
-				"description": "\nThis endpoint makes an HTTP GET request to retrieve a list of posts. The request does not require a request body. The response will include a message, and an array of post objects, each containing an ID, title, content, publication status, author ID, creation timestamp, and update timestamp.\n"
+				"description": "**Get All Posts** (GET /posts)\n\nDescription: Retrieves all posts.  \nEndpoint: GET /posts  \nAuthentication: Bearer Token  \nResponse:\n\n- Status: 200 OK\n    \n- Content-Type: application/json\n    \n- Body:\n    \n\n``` json\n{\n    \"message\": \"Posts retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": \"ebc2028c-6dd9-4d1d-ab7f-3273ecc88dc7\",\n            \"title\": \"post 1\",\n            \"content\": \"content 1\",\n            \"published\": false,\n            \"authorId\": \"e30d9b33-747b-453d-9897-94fcb8838775\",\n            \"createdAt\": \"2024-07-28T09:53:58.090Z\",\n            \"updatedAt\": \"2024-07-28T09:53:58.090Z\"\n        }\n    ]\n}\n\n\n\n ```"
 			},
 			"response": [
 				{
@@ -586,7 +586,8 @@
 						}
 					}
 				},
-				"url": "{{URL}}/posts/{{PostId}}"
+				"url": "{{URL}}/posts/{{PostId}}",
+				"description": "**Get Post By Id** (GET /posts/{postId})\n\nDescription: Retrieves a specific post by its ID.  \nEndpoint: GET /posts/{postId}  \nAuthentication: Bearer Token  \nResponse:\n\n- Status: 200 OK\n    \n- Content-Type: application/json\n    \n- Body:\n    \n\n``` json\n{\n    \"message\": \"Post retrieved successfully\",\n    \"data\": {\n        \"id\": \"ebc2028c-6dd9-4d1d-ab7f-3273ecc88dc7\",\n        \"title\": \"post 1\",\n        \"content\": \"content 1\",\n        \"published\": false,\n        \"authorId\": \"e30d9b33-747b-453d-9897-94fcb8838775\",\n        \"createdAt\": \"2024-07-28T09:53:58.090Z\",\n        \"updatedAt\": \"2024-07-28T09:53:58.090Z\",\n        \"comments\": []\n    }\n}\n\n\n\n ```"
 			},
 			"response": [
 				{
@@ -694,7 +695,8 @@
 						}
 					}
 				},
-				"url": "{{URL}}/posts/{{PostId}}"
+				"url": "{{URL}}/posts/{{PostId}}",
+				"description": "**Update Post** (PUT /posts/{postId})\n\nDescription: Updates an existing post.  \nEndpoint: PUT /posts/{postId}  \nAuthentication: Bearer Token  \nRequest Body:\n\n``` json\n{\n    \"title\": \"post 1\",\n    \"content\": \"content 1\",\n    \"published\": true\n}\n\n ```\n\nResponse:\n\n- Status: 200 OK\n    \n- Content-Type: application/json\n    \n- Body:\n    \n\n``` json\n{\n    \"message\": \"Post updated successfully\",\n    \"data\": {\n        \"id\": \"11eeb29f-1d03-4b99-a5c7-b1775035b266\",\n        \"title\": \"post 1\",\n        \"content\": \"content 1\",\n        \"published\": true,\n        \"createdAt\": \"2024-07-28T07:42:13.083Z\",\n        \"updatedAt\": \"2024-07-28T07:54:00.208Z\",\n        \"authorId\": \"b51de51f-5537-48c8-9950-f0a0c596a1a2\"\n    }\n}\n\n\n\n ```"
 			},
 			"response": [
 				{
@@ -808,7 +810,8 @@
 						}
 					}
 				},
-				"url": "{{URL}}/comments"
+				"url": "{{URL}}/comments",
+				"description": "**Create Comment** (POST /comments)\n\nDescription: Creates a new comment for a post.  \nEndpoint: POST /comments  \nAuthentication: Bearer Token  \nRequest Body:\n\n``` json\n{\n    \"postId\": \"{{PostId}}\",\n    \"content\": \"comment 1\"\n}\n\n ```\n\nResponse:\n\n- Status: 201 Created\n    \n- Content-Type: application/json\n    \n- Body:\n    \n\n``` json\n{\n    \"message\": \"Comment created successfully\",\n    \"data\": {\n        \"id\": \"698cc815-d0b0-42df-a976-cd196a9f5f42\",\n        \"content\": \"comment 1\",\n        \"postId\": \"11eeb29f-1d03-4b99-a5c7-b1775035b266\",\n        \"authorId\": \"b51de51f-5537-48c8-9950-f0a0c596a1a2\",\n        \"createdAt\": \"2024-07-28T07:50:12.999Z\",\n        \"updatedAt\": \"2024-07-28T07:50:12.999Z\"\n    }\n}\n\n\n\n ```"
 			},
 			"response": [
 				{
