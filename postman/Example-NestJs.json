@@ -2,6 +2,7 @@
 	"info": {
 		"_postman_id": "27496d0d-452b-4495-a09c-966493db7bb4",
 		"name": "Example-NestJs",
+		"description": "# **👋 Welcome to the Blog API Documentation!**\n\nHello there! This guide will help you understand how to use this API. 😊\n\nOur API lets you:\n\n- Create and manage user accounts 👤\n    \n- Make blog posts 📝\n    \n- Add comments to posts 💬\n    \n\nIn this guide, you'll find information on:\n\n- How to send requests to the API\n    \n- What information you need to provide\n    \n- What responses you'll get back\n    \n\nLet's get started and learn how to use this API! 🚀",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
@@ -1359,7 +1360,8 @@
 						}
 					}
 				},
-				"url": "{{URL}}/auth/logout"
+				"url": "{{URL}}/auth/logout",
+				"description": "**Logout** (POST /auth/logout)\n\nDescription: Logs out the currently authenticated user.  \nEndpoint: POST /auth/logout  \nAuthentication: Bearer Token  \nResponse:\n\n- Status: 200 OK\n    \n- Content-Type: application/json\n    \n- Body:\n    \n\n``` json\n{\n    \"message\": \"Logged out successfully\",\n    \"data\": []\n}\n\n\n\n ```"
 			},
 			"response": [
 				{
