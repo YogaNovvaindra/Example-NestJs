@@ -24,7 +24,7 @@ This project is a simple REST API built with [NestJS](https://github.com/nestjs/
 
 This project follows the module-based architecture pattern commonly used in NestJS applications:
 
-1. **Modularity**: Each feature (auth, posts and comment) is encapsulated in its own module.
+1. **Modularity**: Each feature (auth, posts and comments) is encapsulated in its own module.
 2. **Separation of Concerns**: Controllers handle HTTP requests, services contain business logic, and the Prisma service manages database operations.
 3. **Scalability**: New features can be easily added as separate modules.
 4. **Testability**: The modular structure facilitates writing unit tests and e2e tests.
