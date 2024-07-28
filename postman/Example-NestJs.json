@@ -2,6 +2,7 @@
 	"info": {
 		"_postman_id": "27496d0d-452b-4495-a09c-966493db7bb4",
 		"name": "Example-NestJs",
+		"description": "# **👋 Welcome to the Blog API Documentation!**\n\nHello there! This guide will help you understand how to use this API. 😊\n\nIn this guide, you'll find information on:\n\n- How to send requests to the API\n    \n- What information you need to provide\n    \n- What responses you'll get back\n    \n\nLet's get started and learn how to use this API! 🚀",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
@@ -35,7 +36,7 @@
 				"method": "GET",
 				"header": [],
 				"url": "{{URL}}",
-				"description": "### GET Request\n\nThis endpoint makes an HTTP GET request to {{URL}}.\n\n#### Request Body\n\nThis request does not require a request body.\n\n#### Response\n\n- Status: 200\n    \n- Content-Type: text/html\n    \n- Body: \"Hello World!\""
+				"description": "**Root** (GET /)\n\nDescription: Retrieves a simple \"Hello World!\" message.  \nEndpoint: GET /  \nResponse:\n\n- Status: 200 OK\n    \n- Content-Type: text/html\n    \n- Body: \"Hello World!\""
 			},
 			"response": [
 				{
@@ -140,7 +141,7 @@
 					}
 				},
 				"url": "{{URL}}/auth/register",
-				"description": "### Register User\n\nThis endpoint is used to register a new user.\n\n#### Request Body\n\n- email (string, required): The email of the user.\n    \n- password (string, required): The password for the user account.\n    \n\n#### Response (application/json)\n\nThe response will be a JSON object with the following properties:\n\n- message (string): A message regarding the registration status.\n    \n- token (string): A token for the registered user.\n    \n- data (array): An array containing additional data related to the registration.\n    \n\n#### JSON Schema\n\n``` json\n{\n    \"type\": \"object\",\n    \"properties\": {\n        \"message\": {\n            \"type\": \"string\"\n        },\n        \"token\": {\n            \"type\": \"string\"\n        },\n        \"data\": {\n            \"type\": \"array\"\n        }\n    }\n}\n\n ```"
+				"description": "**Register** (POST /auth/register)\n\nDescription: Registers a new user.  \nEndpoint: POST /auth/register  \nRequest Body:\n\n``` json\n{\n    \"email\": \"example@gmail.com\",\n    \"password\": \"password\"\n}\n\n ```\n\nResponse:\n\n- Status: 201 Created\n    \n- Content-Type: application/json\n    \n- Body:\n    \n\n``` json\n{\n    \"message\": \"Login successful\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...\",\n    \"data\": []\n}\n\n ```"
 			},
 			"response": [
 				{
@@ -254,7 +255,7 @@
 					}
 				},
 				"url": "{{URL}}/auth/login",
-				"description": "### Auth Login\n\nThis endpoint is used to authenticate a user by providing their email and password.\n\n#### Request Body\n\n- email (string, required): The email of the user.\n    \n- password (string, required): The password of the user.\n    \n\n#### Response (application/json)\n\nThe response will be a JSON object with the following properties:\n\n- message (string): A message related to the authentication status.\n    \n- token (string): The authentication token for the user.\n    \n- data (array): An array of additional data related to the authentication.\n    \n\n``` json\n{\n    \"type\": \"object\",\n    \"properties\": {\n        \"message\": {\n            \"type\": \"string\"\n        },\n        \"token\": {\n            \"type\": \"string\"\n        },\n        \"data\": {\n            \"type\": \"array\"\n        }\n    }\n}\n\n ```"
+				"description": "**Login** (POST /auth/login)\n\nDescription: Authenticates a user and returns a token.  \nEndpoint: POST /auth/login  \nRequest Body:\n\n``` json\n{\n    \"email\": \"example@gmail.com\",\n    \"password\": \"password\"\n}\n\n ```\n\nResponse:\n\n- Status: 200 OK\n    \n- Content-Type: application/json\n    \n- Body:\n    \n\n``` json\n{\n    \"message\": \"Login successful\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...\",\n    \"data\": []\n}\n\n ```"
 			},
 			"response": [
 				{
@@ -369,7 +370,7 @@
 					}
 				},
 				"url": "{{URL}}/posts",
-				"description": "The `/posts` endpoint allows you to create a new post by sending an HTTP POST request with the title and content in the request body.\n\n### Request Body\n\n- `title` (string, required): The title of the post.\n    \n- `content` (string, required): The content of the post.\n    \n\n### Response\n\nThe response will have a status code of 201 and a JSON content type. The response body will follow the JSON schema below:\n\n``` json\n{\n    \"type\": \"object\",\n    \"properties\": {\n        \"message\": {\n            \"type\": \"string\"\n        },\n        \"data\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"id\": {\n                    \"type\": \"string\"\n                },\n                \"title\": {\n                    \"type\": \"string\"\n                },\n                \"content\": {\n                    \"type\": \"string\"\n                },\n                \"published\": {\n                    \"type\": \"boolean\"\n                },\n                \"createdAt\": {\n                    \"type\": \"string\"\n                },\n                \"updatedAt\": {\n                    \"type\": \"string\"\n                },\n                \"authorId\": {\n                    \"type\": \"string\"\n                }\n            }\n        }\n    }\n}\n\n ```"
+				"description": "**Create Post** (POST /posts)\n\nDescription: Creates a new post.  \nEndpoint: POST /posts  \nAuthentication: Bearer Token  \nRequest Body:\n\n``` json\n{\n    \"title\": \"post 1\",\n    \"content\": \"content 1\"\n}\n\n ```\n\nResponse:\n\n- Status: 201 Created\n    \n- Content-Type: application/json\n    \n- Body:\n    \n\n``` json\n{\n    \"message\": \"Post created successfully\",\n    \"data\": {\n        \"id\": \"e78fdc84-1ef9-41d7-a60f-b96d0de8209e\",\n        \"title\": \"post 1\",\n        \"content\": \"content 1\",\n        \"published\": false,\n        \"authorId\": \"e30d9b33-747b-453d-9897-94fcb8838775\",\n        \"createdAt\": \"2024-07-28T09:29:12.173Z\",\n        \"updatedAt\": \"2024-07-28T09:29:12.173Z\"\n    }\n}\n\n ```"
 			},
 			"response": [
 				{
@@ -478,7 +479,7 @@
 					}
 				},
 				"url": "{{URL}}/posts",
-				"description": "### Get Posts\n\nThis endpoint retrieves a list of posts.\n\n#### Request Body\n\nThis is a GET request and does not require a request body.\n\n#### Response\n\n- Status: 200 OK\n    \n- Content-Type: application/json\n    \n\n##### Data\n\n- `id` (string) - The unique identifier of the post.\n    \n- `title` (string) - The title of the post.\n    \n- `content` (string) - The content of the post.\n    \n- `published` (boolean) - Indicates if the post is published.\n    \n- `createdAt` (string) - The timestamp when the post was created.\n    \n- `updatedAt` (string) - The timestamp when the post was last updated.\n    \n- `authorId` (string) - The unique identifier of the author of the post.\n    \n- `author`\n    - `id` (string) - The unique identifier of the author.\n        \n    - `email` (string) - The email address of the author.\n        \n\nThe response contains an array of post objects, each including the post details and the author's information."
+				"description": "**Get All Posts** (GET /posts)\n\nDescription: Retrieves all posts.  \nEndpoint: GET /posts  \nAuthentication: Bearer Token  \nResponse:\n\n- Status: 200 OK\n    \n- Content-Type: application/json\n    \n- Body:\n    \n\n``` json\n{\n    \"message\": \"Posts retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": \"ebc2028c-6dd9-4d1d-ab7f-3273ecc88dc7\",\n            \"title\": \"post 1\",\n            \"content\": \"content 1\",\n            \"published\": false,\n            \"authorId\": \"e30d9b33-747b-453d-9897-94fcb8838775\",\n            \"createdAt\": \"2024-07-28T09:53:58.090Z\",\n            \"updatedAt\": \"2024-07-28T09:53:58.090Z\"\n        }\n    ]\n}\n\n\n\n ```"
 			},
 			"response": [
 				{
@@ -586,7 +587,8 @@
 						}
 					}
 				},
-				"url": "{{URL}}/posts/{{PostId}}"
+				"url": "{{URL}}/posts/{{PostId}}",
+				"description": "**Get Post By Id** (GET /posts/{postId})\n\nDescription: Retrieves a specific post by its ID.  \nEndpoint: GET /posts/{postId}  \nAuthentication: Bearer Token  \nResponse:\n\n- Status: 200 OK\n    \n- Content-Type: application/json\n    \n- Body:\n    \n\n``` json\n{\n    \"message\": \"Post retrieved successfully\",\n    \"data\": {\n        \"id\": \"ebc2028c-6dd9-4d1d-ab7f-3273ecc88dc7\",\n        \"title\": \"post 1\",\n        \"content\": \"content 1\",\n        \"published\": false,\n        \"authorId\": \"e30d9b33-747b-453d-9897-94fcb8838775\",\n        \"createdAt\": \"2024-07-28T09:53:58.090Z\",\n        \"updatedAt\": \"2024-07-28T09:53:58.090Z\",\n        \"comments\": []\n    }\n}\n\n\n\n ```"
 			},
 			"response": [
 				{
@@ -694,7 +696,8 @@
 						}
 					}
 				},
-				"url": "{{URL}}/posts/{{PostId}}"
+				"url": "{{URL}}/posts/{{PostId}}",
+				"description": "**Update Post** (PUT /posts/{postId})\n\nDescription: Updates an existing post.  \nEndpoint: PUT /posts/{postId}  \nAuthentication: Bearer Token  \nRequest Body:\n\n``` json\n{\n    \"title\": \"post 1\",\n    \"content\": \"content 1\",\n    \"published\": true\n}\n\n ```\n\nResponse:\n\n- Status: 200 OK\n    \n- Content-Type: application/json\n    \n- Body:\n    \n\n``` json\n{\n    \"message\": \"Post updated successfully\",\n    \"data\": {\n        \"id\": \"11eeb29f-1d03-4b99-a5c7-b1775035b266\",\n        \"title\": \"post 1\",\n        \"content\": \"content 1\",\n        \"published\": true,\n        \"createdAt\": \"2024-07-28T07:42:13.083Z\",\n        \"updatedAt\": \"2024-07-28T07:54:00.208Z\",\n        \"authorId\": \"b51de51f-5537-48c8-9950-f0a0c596a1a2\"\n    }\n}\n\n\n\n ```"
 			},
 			"response": [
 				{
@@ -808,7 +811,8 @@
 						}
 					}
 				},
-				"url": "{{URL}}/comments"
+				"url": "{{URL}}/comments",
+				"description": "**Create Comment** (POST /comments)\n\nDescription: Creates a new comment for a post.  \nEndpoint: POST /comments  \nAuthentication: Bearer Token  \nRequest Body:\n\n``` json\n{\n    \"postId\": \"{{PostId}}\",\n    \"content\": \"comment 1\"\n}\n\n ```\n\nResponse:\n\n- Status: 201 Created\n    \n- Content-Type: application/json\n    \n- Body:\n    \n\n``` json\n{\n    \"message\": \"Comment created successfully\",\n    \"data\": {\n        \"id\": \"698cc815-d0b0-42df-a976-cd196a9f5f42\",\n        \"content\": \"comment 1\",\n        \"postId\": \"11eeb29f-1d03-4b99-a5c7-b1775035b266\",\n        \"authorId\": \"b51de51f-5537-48c8-9950-f0a0c596a1a2\",\n        \"createdAt\": \"2024-07-28T07:50:12.999Z\",\n        \"updatedAt\": \"2024-07-28T07:50:12.999Z\"\n    }\n}\n\n\n\n ```"
 			},
 			"response": [
 				{
@@ -916,7 +920,8 @@
 						}
 					}
 				},
-				"url": "{{URL}}/comments/{{CommentId}}"
+				"url": "{{URL}}/comments/{{CommentId}}",
+				"description": "**Update Comment** (PUT /comments/{commentId})\n\nDescription: Updates an existing comment.  \nEndpoint: PUT /comments/{commentId}  \nAuthentication: Bearer Token  \nRequest Body:\n\n``` json\n{\n    \"postId\": \"{{PostId}}\",\n    \"content\": \"comment apa ini\"\n}\n\n ```\n\nResponse:\n\n- Status: 200 OK\n    \n- Content-Type: application/json\n    \n- Body:\n    \n\n``` json\n{\n    \"message\": \"Comment updated successfully\",\n    \"data\": {\n        \"id\": \"c915cb8e-84e8-4c10-8d44-bf8479b95253\",\n        \"content\": \"comment apa ini\",\n        \"postId\": \"dfff083d-78cc-4d79-9e19-cbd5b921b831\",\n        \"authorId\": \"83218478-a6b3-4a43-9385-9ab4d96d78de\",\n        \"createdAt\": \"2024-07-28T05:09:59.604Z\",\n        \"updatedAt\": \"2024-07-28T05:10:02.882Z\"\n    }\n}\n\n ```"
 			},
 			"response": [
 				{
@@ -1024,7 +1029,8 @@
 						}
 					}
 				},
-				"url": "{{URL}}/comments/post/{{PostId}}"
+				"url": "{{URL}}/comments/post/{{PostId}}",
+				"description": "**Get Comments By Post Id** (GET /comments/post/{postId})\n\nDescription: Retrieves all comments for a specific post.  \nEndpoint: GET /comments/post/{postId}  \nAuthentication: Bearer Token  \nResponse:\n\n- Status: 200 OK\n    \n- Content-Type: application/json\n    \n- Body:\n    \n\n``` json\n{\n    \"message\": \"Comments retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": \"dc0b0100-1fa9-4416-8c7e-b31de6d425c6\",\n            \"content\": \"comment 1\",\n            \"postId\": \"ebc2028c-6dd9-4d1d-ab7f-3273ecc88dc7\",\n            \"authorId\": \"e30d9b33-747b-453d-9897-94fcb8838775\",\n            \"createdAt\": \"2024-07-28T09:54:47.867Z\",\n            \"updatedAt\": \"2024-07-28T09:54:47.867Z\"\n        }\n    ]\n}\n\n\n\n ```"
 			},
 			"response": [
 				{
@@ -1132,7 +1138,8 @@
 						}
 					}
 				},
-				"url": "{{URL}}/comments/{{CommentId}}"
+				"url": "{{URL}}/comments/{{CommentId}}",
+				"description": "**Delete Comment** (DELETE /comments/{commentId})\n\nDescription: Deletes a specific comment.  \nEndpoint: DELETE /comments/{commentId}  \nAuthentication: Bearer Token  \nResponse:\n\n- Status: 200 OK\n    \n- Content-Type: application/json\n    \n- Body:\n    \n\n``` json\n{\n    \"message\": \"Comment deleted successfully\",\n    \"data\": {\n        \"id\": \"dc0b0100-1fa9-4416-8c7e-b31de6d425c6\",\n        \"content\": \"comment 1\",\n        \"postId\": \"ebc2028c-6dd9-4d1d-ab7f-3273ecc88dc7\",\n        \"authorId\": \"e30d9b33-747b-453d-9897-94fcb8838775\",\n        \"createdAt\": \"2024-07-28T09:54:47.867Z\",\n        \"updatedAt\": \"2024-07-28T09:54:47.867Z\"\n    }\n}\n\n ```"
 			},
 			"response": [
 				{
@@ -1240,7 +1247,8 @@
 						}
 					}
 				},
-				"url": "{{URL}}/posts/{{PostId}}"
+				"url": "{{URL}}/posts/{{PostId}}",
+				"description": "**Delete Post** (DELETE /posts/{postId})\n\nDescription: Deletes a specific post.  \nEndpoint: DELETE /posts/{postId}  \nAuthentication: Bearer Token  \nResponse:\n\n- Status: 200 OK\n    \n- Content-Type: application/json\n    \n- Body:\n    \n\n``` json\n{\n    \"message\": \"Post deleted successfully\",\n    \"data\": {\n        \"id\": \"ebc2028c-6dd9-4d1d-ab7f-3273ecc88dc7\",\n        \"title\": \"post 1\",\n        \"content\": \"content 1\",\n        \"published\": false,\n        \"authorId\": \"e30d9b33-747b-453d-9897-94fcb8838775\",\n        \"createdAt\": \"2024-07-28T09:53:58.090Z\",\n        \"updatedAt\": \"2024-07-28T09:53:58.090Z\"\n    }\n}\n\n\n\n ```"
 			},
 			"response": [
 				{
@@ -1352,7 +1360,8 @@
 						}
 					}
 				},
-				"url": "{{URL}}/auth/logout"
+				"url": "{{URL}}/auth/logout",
+				"description": "**Logout** (POST /auth/logout)\n\nDescription: Logs out the currently authenticated user.  \nEndpoint: POST /auth/logout  \nAuthentication: Bearer Token  \nResponse:\n\n- Status: 200 OK\n    \n- Content-Type: application/json\n    \n- Body:\n    \n\n``` json\n{\n    \"message\": \"Logged out successfully\",\n    \"data\": []\n}\n\n\n\n ```"
 			},
 			"response": [
 				{
