@@ -477,7 +477,8 @@
 						}
 					}
 				},
-				"url": "{{URL}}/posts"
+				"url": "{{URL}}/posts",
+				"description": "\nThis endpoint makes an HTTP GET request to retrieve a list of posts. The request does not require a request body. The response will include a message, and an array of post objects, each containing an ID, title, content, publication status, author ID, creation timestamp, and update timestamp.\n"
 			},
 			"response": [
 				{
