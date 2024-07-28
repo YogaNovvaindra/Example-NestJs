@@ -34,8 +34,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "{{URL}}",
-				"description": "### GET Request\n\nThis endpoint makes an HTTP GET request to {{URL}}.\n\n#### Request Body\n\nThis request does not require a request body.\n\n#### Response\n\n- Status: 200\n    \n- Content-Type: text/html\n    \n- Body: \"Hello World!\""
+				"url": "{{URL}}"
 			},
 			"response": [
 				{
@@ -139,8 +138,7 @@
 						}
 					}
 				},
-				"url": "{{URL}}/auth/register",
-				"description": "### Register User\n\nThis endpoint is used to register a new user.\n\n#### Request Body\n\n- email (string, required): The email of the user.\n    \n- password (string, required): The password for the user account.\n    \n\n#### Response (application/json)\n\nThe response will be a JSON object with the following properties:\n\n- message (string): A message regarding the registration status.\n    \n- token (string): A token for the registered user.\n    \n- data (array): An array containing additional data related to the registration.\n    \n\n#### JSON Schema\n\n``` json\n{\n    \"type\": \"object\",\n    \"properties\": {\n        \"message\": {\n            \"type\": \"string\"\n        },\n        \"token\": {\n            \"type\": \"string\"\n        },\n        \"data\": {\n            \"type\": \"array\"\n        }\n    }\n}\n\n ```"
+				"url": "{{URL}}/auth/register"
 			},
 			"response": [
 				{
@@ -253,8 +251,7 @@
 						}
 					}
 				},
-				"url": "{{URL}}/auth/login",
-				"description": "### Auth Login\n\nThis endpoint is used to authenticate a user by providing their email and password.\n\n#### Request Body\n\n- email (string, required): The email of the user.\n    \n- password (string, required): The password of the user.\n    \n\n#### Response (application/json)\n\nThe response will be a JSON object with the following properties:\n\n- message (string): A message related to the authentication status.\n    \n- token (string): The authentication token for the user.\n    \n- data (array): An array of additional data related to the authentication.\n    \n\n``` json\n{\n    \"type\": \"object\",\n    \"properties\": {\n        \"message\": {\n            \"type\": \"string\"\n        },\n        \"token\": {\n            \"type\": \"string\"\n        },\n        \"data\": {\n            \"type\": \"array\"\n        }\n    }\n}\n\n ```"
+				"url": "{{URL}}/auth/login"
 			},
 			"response": [
 				{
@@ -368,8 +365,7 @@
 						}
 					}
 				},
-				"url": "{{URL}}/posts",
-				"description": "The `/posts` endpoint allows you to create a new post by sending an HTTP POST request with the title and content in the request body.\n\n### Request Body\n\n- `title` (string, required): The title of the post.\n    \n- `content` (string, required): The content of the post.\n    \n\n### Response\n\nThe response will have a status code of 201 and a JSON content type. The response body will follow the JSON schema below:\n\n``` json\n{\n    \"type\": \"object\",\n    \"properties\": {\n        \"message\": {\n            \"type\": \"string\"\n        },\n        \"data\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"id\": {\n                    \"type\": \"string\"\n                },\n                \"title\": {\n                    \"type\": \"string\"\n                },\n                \"content\": {\n                    \"type\": \"string\"\n                },\n                \"published\": {\n                    \"type\": \"boolean\"\n                },\n                \"createdAt\": {\n                    \"type\": \"string\"\n                },\n                \"updatedAt\": {\n                    \"type\": \"string\"\n                },\n                \"authorId\": {\n                    \"type\": \"string\"\n                }\n            }\n        }\n    }\n}\n\n ```"
+				"url": "{{URL}}/posts"
 			},
 			"response": [
 				{
@@ -477,8 +473,7 @@
 						}
 					}
 				},
-				"url": "{{URL}}/posts",
-				"description": "### Get Posts\n\nThis endpoint retrieves a list of posts.\n\n#### Request Body\n\nThis is a GET request and does not require a request body.\n\n#### Response\n\n- Status: 200 OK\n    \n- Content-Type: application/json\n    \n\n##### Data\n\n- `id` (string) - The unique identifier of the post.\n    \n- `title` (string) - The title of the post.\n    \n- `content` (string) - The content of the post.\n    \n- `published` (boolean) - Indicates if the post is published.\n    \n- `createdAt` (string) - The timestamp when the post was created.\n    \n- `updatedAt` (string) - The timestamp when the post was last updated.\n    \n- `authorId` (string) - The unique identifier of the author of the post.\n    \n- `author`\n    - `id` (string) - The unique identifier of the author.\n        \n    - `email` (string) - The email address of the author.\n        \n\nThe response contains an array of post objects, each including the post details and the author's information."
+				"url": "{{URL}}/posts"
 			},
 			"response": [
 				{
