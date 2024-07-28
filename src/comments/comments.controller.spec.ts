@@ -117,7 +117,7 @@ describe('CommentsController', () => {
       await expect(commentsController.getCommentsByPostId(postId)).rejects.toThrow(
         new HttpException(
           { message: 'No comments found for this post', data: [] },
-          HttpStatus.OK,
+          HttpStatus.NOT_FOUND,
         ),
       );
     });

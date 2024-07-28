@@ -35,7 +35,7 @@ export class CommentsController {
     try {
       const comments = await this.commentsService.getCommentsByPostId(postId);
       if (!comments || comments.length === 0) {
-        throw new HttpException({ message: 'No comments found for this post', data: [] }, HttpStatus.OK);
+        throw new HttpException({ message: 'No comments found for this post', data: [] }, HttpStatus.NOT_FOUND);
       }
       return { message: 'Comments retrieved successfully', data: comments };
     } catch (error) {
