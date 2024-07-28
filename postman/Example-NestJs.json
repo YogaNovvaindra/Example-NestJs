@@ -34,7 +34,8 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "{{URL}}"
+				"url": "{{URL}}",
+				"description": "1. Root (GET /)\n    \n\nDescription: Retrieves a simple \"Hello World!\" message.  \nEndpoint: GET /  \nResponse:\n\n- Status: 200 OK\n    \n- Content-Type: text/html\n    \n- Body: \"Hello World!\""
 			},
 			"response": [
 				{
