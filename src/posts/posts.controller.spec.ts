@@ -6,7 +6,7 @@ import { HttpException, HttpStatus } from '@nestjs/common';
 describe('PostsController', () => {
   let postsController: PostsController;
   let postsService: PostsService;
-  const timestamp = 1690543200000; // Example timestamp
+  const timestamp = 1690543200000;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -125,22 +125,22 @@ describe('PostsController', () => {
         updatedAt: new Date(timestamp),
         authorId: '123e4567-e89b-12d3-a456-426614174000',
         comments: [
-            {
-                id: 'a87ff679-a2f3-4e61-9ff1-2b7b3f3b6281',
-                content: 'Comment 1',
-                postId: postId,
-                authorId: 'a87ff679-a2f3-4e61-9ff1-2b7b3f3b6281',
-                createdAt: new Date(timestamp),
-                updatedAt: new Date(timestamp),
-            },
-            {
-                id: 'a87ff679-a2f3-4e61-9ff1-2b7b3f3b6281',
-                content: 'Comment 2',
-                postId: postId,
-                authorId: 'a87ff679-a2f3-4e61-9ff1-2b7b3f3b6281',
-                createdAt: new Date(timestamp),
-                updatedAt: new Date(timestamp),
-            },
+          {
+            id: 'a87ff679-a2f3-4e61-9ff1-2b7b3f3b6281',
+            content: 'Comment 1',
+            postId: postId,
+            authorId: 'a87ff679-a2f3-4e61-9ff1-2b7b3f3b6281',
+            createdAt: new Date(timestamp),
+            updatedAt: new Date(timestamp),
+          },
+          {
+            id: 'a87ff679-a2f3-4e61-9ff1-2b7b3f3b6281',
+            content: 'Comment 2',
+            postId: postId,
+            authorId: 'a87ff679-a2f3-4e61-9ff1-2b7b3f3b6281',
+            createdAt: new Date(timestamp),
+            updatedAt: new Date(timestamp),
+          },
         ],
       };
 
@@ -184,15 +184,15 @@ describe('PostsController', () => {
         authorId: '123e4567-e89b-12d3-a456-426614174000',
         createdAt: new Date(timestamp),
         updatedAt: new Date(timestamp),
-        comments: [], 
+        comments: [],
       };
       const updatedPost = { ...existingPost, ...postData };
-  
+
       jest.spyOn(postsService, 'getPostById').mockResolvedValue(existingPost);
       jest.spyOn(postsService, 'updatePost').mockResolvedValue(updatedPost);
-  
+
       const result = await postsController.updatePost(postId, postData);
-  
+
       expect(result).toEqual({
         message: 'Post updated successfully',
         data: updatedPost,
@@ -231,14 +231,14 @@ describe('PostsController', () => {
         authorId: '123e4567-e89b-12d3-a456-426614174000',
         createdAt: new Date(timestamp),
         updatedAt: new Date(timestamp),
-        comments: [],  // Include an empty comments array
+        comments: [],
       };
-  
+
       jest.spyOn(postsService, 'getPostById').mockResolvedValue(existingPost);
       jest.spyOn(postsService, 'deletePost').mockResolvedValue(existingPost);
-  
+
       const result = await postsController.deletePost(postId);
-  
+
       expect(result).toEqual({
         message: 'Post deleted successfully',
         data: existingPost,

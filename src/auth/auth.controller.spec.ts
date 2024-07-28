@@ -29,7 +29,6 @@ describe('AuthController', () => {
 
   describe('login', () => {
     it('should login successfully and return a JWT token', async () => {
-      // Using UUID for user ID
       const user = { id: '123e4567-e89b-12d3-a456-426614174000', email: 'test@example.com' };
       const loginResult = {
         message: 'Login successful',

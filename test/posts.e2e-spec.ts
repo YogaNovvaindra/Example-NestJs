@@ -134,7 +134,6 @@ describe('Posts (e2e)', () => {
   });
 
   afterAll(async () => {
-    // Clean up: delete the test user
     await prismaService.user.delete({ where: { id: testUserId } });
     await app.close();
   });

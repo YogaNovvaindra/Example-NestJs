@@ -5,7 +5,7 @@ import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 @Controller('posts')
 @UseGuards(JwtAuthGuard)
 export class PostsController {
-  constructor(private postsService: PostsService) {}
+  constructor(private postsService: PostsService) { }
 
   @Post()
   async createPost(@Request() req, @Body() postData: { title: string; content: string }) {
@@ -28,6 +28,9 @@ export class PostsController {
   async getAllPosts() {
     try {
       const posts = await this.postsService.getAllPosts();
+      if (!posts || posts.length === 0) {
+        return { message: 'No posts found', data: [] };
+      }
       return { message: 'Posts retrieved successfully', data: posts };
     } catch (error) {
       throw new HttpException({ message: 'Failed to retrieve posts', data: [] }, HttpStatus.INTERNAL_SERVER_ERROR);

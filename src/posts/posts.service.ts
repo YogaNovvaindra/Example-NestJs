@@ -6,7 +6,7 @@ export class PostsService {
   static getPostById(postId: string) {
     throw new Error('Method not implemented.');
   }
-  constructor(private prisma: PrismaService) {}
+  constructor(private prisma: PrismaService) { }
 
   async createPost(authorId: string, title: string, content: string) {
     return this.prisma.post.create({

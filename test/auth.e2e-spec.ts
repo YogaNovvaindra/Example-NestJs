@@ -95,9 +95,9 @@ describe('Authentication (e2e)', () => {
     await prismaService.user.deleteMany({
       where: {
         email: {
-          in: ['test@example.com', 'existing@example.com']
-        }
-      }
+          in: ['test@example.com', 'existing@example.com'],
+        },
+      },
     });
 
     await app.close();

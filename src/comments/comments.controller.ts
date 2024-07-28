@@ -5,11 +5,10 @@ import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 @Controller('comments')
 @UseGuards(JwtAuthGuard)
 export class CommentsController {
-  constructor(private commentsService: CommentsService) {}
+  constructor(private commentsService: CommentsService) { }
 
   @Post()
   async createComment(@Request() req, @Body() commentData: { postId: string; content: string }) {
-    // if post id is null or empty, or content is null or empty, return a 400 Bad Request error
     if (!commentData.postId || commentData.postId.trim() === '' || !commentData.content || commentData.content.trim() === '') {
       throw new HttpException(
         { message: 'Post Id and content are required and cannot be empty', data: [] },
@@ -36,7 +35,7 @@ export class CommentsController {
     try {
       const comments = await this.commentsService.getCommentsByPostId(postId);
       if (!comments || comments.length === 0) {
-        throw new HttpException({ message: 'No comments found for this post', data: [] }, HttpStatus.NOT_FOUND);
+        throw new HttpException({ message: 'No comments found for this post', data: [] }, HttpStatus.OK);
       }
       return { message: 'Comments retrieved successfully', data: comments };
     } catch (error) {

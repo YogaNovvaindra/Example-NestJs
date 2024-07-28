@@ -37,7 +37,53 @@
 				"url": "{{URL}}",
 				"description": "### GET Request\n\nThis endpoint makes an HTTP GET request to {{URL}}.\n\n#### Request Body\n\nThis request does not require a request body.\n\n#### Response\n\n- Status: 200\n    \n- Content-Type: text/html\n    \n- Body: \"Hello World!\""
 			},
-			"response": []
+			"response": [
+				{
+					"id": "0f926ec2-4795-402c-b9f4-74f63c9e617d",
+					"name": "Root",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "{{URL}}"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "12"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c-Lve95gjOVATpfV8EL5X4nxwjKHE\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 28 Jul 2024 09:21:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "Hello World!"
+				}
+			]
 		},
 		{
 			"name": "Register",
@@ -96,7 +142,62 @@
 				"url": "{{URL}}/auth/register",
 				"description": "### Register User\n\nThis endpoint is used to register a new user.\n\n#### Request Body\n\n- email (string, required): The email of the user.\n    \n- password (string, required): The password for the user account.\n    \n\n#### Response (application/json)\n\nThe response will be a JSON object with the following properties:\n\n- message (string): A message regarding the registration status.\n    \n- token (string): A token for the registered user.\n    \n- data (array): An array containing additional data related to the registration.\n    \n\n#### JSON Schema\n\n``` json\n{\n    \"type\": \"object\",\n    \"properties\": {\n        \"message\": {\n            \"type\": \"string\"\n        },\n        \"token\": {\n            \"type\": \"string\"\n        },\n        \"data\": {\n            \"type\": \"array\"\n        }\n    }\n}\n\n ```"
 			},
-			"response": []
+			"response": [
+				{
+					"id": "37ea5ca0-f89a-4116-8d87-51eb0a5d16c6",
+					"name": "Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"example@gmail.com\",\r\n    \"password\" : \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/auth/register"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "276"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"114-g39ZWpcqrzARYCZMSmq8Bn1TGMU\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 28 Jul 2024 09:29:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"message\": \"Login successful\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV4YW1wbGVAZ21haWwuY29tIiwic3ViIjoiZTMwZDliMzMtNzQ3Yi00NTNkLTk4OTctOTRmY2I4ODM4Nzc1IiwiaWF0IjoxNzIyMTU4OTQwLCJleHAiOjE3MjIxNjI1NDB9.TmndbyPZRaOf5lnPkzFPw9M7S_xwddj8QTXupxpcB-Q\",\n    \"data\": []\n}"
+				}
+			]
 		},
 		{
 			"name": "Login",
@@ -155,7 +256,62 @@
 				"url": "{{URL}}/auth/login",
 				"description": "### Auth Login\n\nThis endpoint is used to authenticate a user by providing their email and password.\n\n#### Request Body\n\n- email (string, required): The email of the user.\n    \n- password (string, required): The password of the user.\n    \n\n#### Response (application/json)\n\nThe response will be a JSON object with the following properties:\n\n- message (string): A message related to the authentication status.\n    \n- token (string): The authentication token for the user.\n    \n- data (array): An array of additional data related to the authentication.\n    \n\n``` json\n{\n    \"type\": \"object\",\n    \"properties\": {\n        \"message\": {\n            \"type\": \"string\"\n        },\n        \"token\": {\n            \"type\": \"string\"\n        },\n        \"data\": {\n            \"type\": \"array\"\n        }\n    }\n}\n\n ```"
 			},
-			"response": []
+			"response": [
+				{
+					"id": "8d707d12-aab5-4910-ac91-438ec8f331ba",
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"example@gmail.com\",\r\n    \"password\" : \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/auth/login"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "276"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"114-Ali6KDzDSj/nF4ZGYRSsMooJbD0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 28 Jul 2024 09:53:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"message\": \"Login successful\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV4YW1wbGVAZ21haWwuY29tIiwic3ViIjoiZTMwZDliMzMtNzQ3Yi00NTNkLTk4OTctOTRmY2I4ODM4Nzc1IiwiaWF0IjoxNzIyMTYwNDIwLCJleHAiOjE3MjIxNjQwMjB9.fAhC-kr2iuIjHbgEi-0bkmOjfM0T04wZF2q-vFjZktU\",\n    \"data\": []\n}"
+				}
+			]
 		},
 		{
 			"name": "Create Post",
@@ -215,7 +371,62 @@
 				"url": "{{URL}}/posts",
 				"description": "The `/posts` endpoint allows you to create a new post by sending an HTTP POST request with the title and content in the request body.\n\n### Request Body\n\n- `title` (string, required): The title of the post.\n    \n- `content` (string, required): The content of the post.\n    \n\n### Response\n\nThe response will have a status code of 201 and a JSON content type. The response body will follow the JSON schema below:\n\n``` json\n{\n    \"type\": \"object\",\n    \"properties\": {\n        \"message\": {\n            \"type\": \"string\"\n        },\n        \"data\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"id\": {\n                    \"type\": \"string\"\n                },\n                \"title\": {\n                    \"type\": \"string\"\n                },\n                \"content\": {\n                    \"type\": \"string\"\n                },\n                \"published\": {\n                    \"type\": \"boolean\"\n                },\n                \"createdAt\": {\n                    \"type\": \"string\"\n                },\n                \"updatedAt\": {\n                    \"type\": \"string\"\n                },\n                \"authorId\": {\n                    \"type\": \"string\"\n                }\n            }\n        }\n    }\n}\n\n ```"
 			},
-			"response": []
+			"response": [
+				{
+					"id": "62b3171d-164e-4aed-a36b-ef520a7833e5",
+					"name": "Create Post",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"post 1\",\r\n    \"content\": \"content 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/posts"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "277"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"115-EWh5HBCpoL6xHuT1OCrlME5/rX8\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 28 Jul 2024 09:29:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"message\": \"Post created successfully\",\n    \"data\": {\n        \"id\": \"e78fdc84-1ef9-41d7-a60f-b96d0de8209e\",\n        \"title\": \"post 1\",\n        \"content\": \"content 1\",\n        \"published\": false,\n        \"authorId\": \"e30d9b33-747b-453d-9897-94fcb8838775\",\n        \"createdAt\": \"2024-07-28T09:29:12.173Z\",\n        \"updatedAt\": \"2024-07-28T09:29:12.173Z\"\n    }\n}"
+				}
+			]
 		},
 		{
 			"name": "Get All Post",
@@ -269,7 +480,62 @@
 				"url": "{{URL}}/posts",
 				"description": "### Get Posts\n\nThis endpoint retrieves a list of posts.\n\n#### Request Body\n\nThis is a GET request and does not require a request body.\n\n#### Response\n\n- Status: 200 OK\n    \n- Content-Type: application/json\n    \n\n##### Data\n\n- `id` (string) - The unique identifier of the post.\n    \n- `title` (string) - The title of the post.\n    \n- `content` (string) - The content of the post.\n    \n- `published` (boolean) - Indicates if the post is published.\n    \n- `createdAt` (string) - The timestamp when the post was created.\n    \n- `updatedAt` (string) - The timestamp when the post was last updated.\n    \n- `authorId` (string) - The unique identifier of the author of the post.\n    \n- `author`\n    - `id` (string) - The unique identifier of the author.\n        \n    - `email` (string) - The email address of the author.\n        \n\nThe response contains an array of post objects, each including the post details and the author's information."
 			},
-			"response": []
+			"response": [
+				{
+					"id": "ed3bea21-da04-46c1-9d00-d97e27fbbbef",
+					"name": "Get All Post",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/posts"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "282"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"11a-fpJXajzB5nvHLueIlk8x/RM/pmw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 28 Jul 2024 09:54:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"message\": \"Posts retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": \"ebc2028c-6dd9-4d1d-ab7f-3273ecc88dc7\",\n            \"title\": \"post 1\",\n            \"content\": \"content 1\",\n            \"published\": false,\n            \"authorId\": \"e30d9b33-747b-453d-9897-94fcb8838775\",\n            \"createdAt\": \"2024-07-28T09:53:58.090Z\",\n            \"updatedAt\": \"2024-07-28T09:53:58.090Z\"\n        }\n    ]\n}"
+				}
+			]
 		},
 		{
 			"name": "Get Post By Id",
@@ -322,7 +588,62 @@
 				},
 				"url": "{{URL}}/posts/{{PostId}}"
 			},
-			"response": []
+			"response": [
+				{
+					"id": "6308b6d9-405a-4f40-98ac-0889658b79e3",
+					"name": "Get Post By Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/posts/{{PostId}}"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "293"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"125-WjenV/HBskCblaT4bPsWUO3Yk9w\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 28 Jul 2024 09:54:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"message\": \"Post retrieved successfully\",\n    \"data\": {\n        \"id\": \"ebc2028c-6dd9-4d1d-ab7f-3273ecc88dc7\",\n        \"title\": \"post 1\",\n        \"content\": \"content 1\",\n        \"published\": false,\n        \"authorId\": \"e30d9b33-747b-453d-9897-94fcb8838775\",\n        \"createdAt\": \"2024-07-28T09:53:58.090Z\",\n        \"updatedAt\": \"2024-07-28T09:53:58.090Z\",\n        \"comments\": []\n    }\n}"
+				}
+			]
 		},
 		{
 			"name": "Update Post",
@@ -375,7 +696,62 @@
 				},
 				"url": "{{URL}}/posts/{{PostId}}"
 			},
-			"response": []
+			"response": [
+				{
+					"id": "9802e291-6680-4d68-9151-051c0d2569eb",
+					"name": "Update Post",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"post 1\",\r\n    \"content\": \"content 1\",\r\n    \"published\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/posts/{{PostId}}"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "276"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"114-vwDBozN0UAA6drvT9Rvn12TwlRY\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 28 Jul 2024 07:54:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"message\": \"Post updated successfully\",\n    \"data\": {\n        \"id\": \"11eeb29f-1d03-4b99-a5c7-b1775035b266\",\n        \"title\": \"post 1\",\n        \"content\": \"content 1\",\n        \"published\": true,\n        \"createdAt\": \"2024-07-28T07:42:13.083Z\",\n        \"updatedAt\": \"2024-07-28T07:54:00.208Z\",\n        \"authorId\": \"b51de51f-5537-48c8-9950-f0a0c596a1a2\"\n    }\n}"
+				}
+			]
 		},
 		{
 			"name": "Create Comment",
@@ -434,7 +810,62 @@
 				},
 				"url": "{{URL}}/comments"
 			},
-			"response": []
+			"response": [
+				{
+					"id": "49e23b95-ebc9-4f6c-b849-d5dbdc61fb94",
+					"name": "Create Comment",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"postId\" : \"{{PostId}}\",\r\n    \"content\": \"comment 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/comments"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "293"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"125-YadU6SfBNEkaHnDPNrWqVmLj9kU\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 28 Jul 2024 07:50:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"message\": \"Comment created successfully\",\n    \"data\": {\n        \"id\": \"698cc815-d0b0-42df-a976-cd196a9f5f42\",\n        \"content\": \"comment 1\",\n        \"postId\": \"11eeb29f-1d03-4b99-a5c7-b1775035b266\",\n        \"authorId\": \"b51de51f-5537-48c8-9950-f0a0c596a1a2\",\n        \"createdAt\": \"2024-07-28T07:50:12.999Z\",\n        \"updatedAt\": \"2024-07-28T07:50:12.999Z\"\n    }\n}"
+				}
+			]
 		},
 		{
 			"name": "Update Comment",
@@ -487,7 +918,62 @@
 				},
 				"url": "{{URL}}/comments/{{CommentId}}"
 			},
-			"response": []
+			"response": [
+				{
+					"id": "b6533b7a-e334-4593-aa9b-35b9d7626d0c",
+					"name": "Update Comment",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"postId\" : \"{{PostId}}\",\r\n    \"content\": \"comment apa ini\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/comments/{{CommentId}}"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "299"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"12b-323Xwje6t/5UPgOeF9MVwv4TPvw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 28 Jul 2024 05:10:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"message\": \"Comment updated successfully\",\n    \"data\": {\n        \"id\": \"c915cb8e-84e8-4c10-8d44-bf8479b95253\",\n        \"content\": \"comment apa ini\",\n        \"postId\": \"dfff083d-78cc-4d79-9e19-cbd5b921b831\",\n        \"authorId\": \"83218478-a6b3-4a43-9385-9ab4d96d78de\",\n        \"createdAt\": \"2024-07-28T05:09:59.604Z\",\n        \"updatedAt\": \"2024-07-28T05:10:02.882Z\"\n    }\n}"
+				}
+			]
 		},
 		{
 			"name": "Get Comment By Post Id",
@@ -540,7 +1026,62 @@
 				},
 				"url": "{{URL}}/comments/post/{{PostId}}"
 			},
-			"response": []
+			"response": [
+				{
+					"id": "fb6b1ef6-699f-47b0-863e-b7afc8612661",
+					"name": "Get Comment By Post Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/comments/post/{{PostId}}"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "298"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"12a-MY4TgyXdHO2li08YZiUlRgwaS+o\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 28 Jul 2024 09:54:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"message\": \"Comments retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": \"dc0b0100-1fa9-4416-8c7e-b31de6d425c6\",\n            \"content\": \"comment 1\",\n            \"postId\": \"ebc2028c-6dd9-4d1d-ab7f-3273ecc88dc7\",\n            \"authorId\": \"e30d9b33-747b-453d-9897-94fcb8838775\",\n            \"createdAt\": \"2024-07-28T09:54:47.867Z\",\n            \"updatedAt\": \"2024-07-28T09:54:47.867Z\"\n        }\n    ]\n}"
+				}
+			]
 		},
 		{
 			"name": "Delete Comment",
@@ -593,7 +1134,62 @@
 				},
 				"url": "{{URL}}/comments/{{CommentId}}"
 			},
-			"response": []
+			"response": [
+				{
+					"id": "f78648b9-ed3c-45b8-966d-d6ad8c019a6d",
+					"name": "Delete Comment",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"postId\" : \"{{PostId}}\",\r\n    \"content\": \"comment apa ini\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/comments/{{CommentId}}"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "293"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"125-hQVnfVWucRofaw2On1mL3swcwdU\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 28 Jul 2024 09:54:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"message\": \"Comment deleted successfully\",\n    \"data\": {\n        \"id\": \"dc0b0100-1fa9-4416-8c7e-b31de6d425c6\",\n        \"content\": \"comment 1\",\n        \"postId\": \"ebc2028c-6dd9-4d1d-ab7f-3273ecc88dc7\",\n        \"authorId\": \"e30d9b33-747b-453d-9897-94fcb8838775\",\n        \"createdAt\": \"2024-07-28T09:54:47.867Z\",\n        \"updatedAt\": \"2024-07-28T09:54:47.867Z\"\n    }\n}"
+				}
+			]
 		},
 		{
 			"name": "Delete Post",
@@ -646,7 +1242,62 @@
 				},
 				"url": "{{URL}}/posts/{{PostId}}"
 			},
-			"response": []
+			"response": [
+				{
+					"id": "adc53e76-870d-46a6-be37-8188d644fdb1",
+					"name": "Delete Post",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"post 1\",\r\n    \"content\": \"content 1\",\r\n    \"published\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/posts/{{PostId}}"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "277"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"115-+AR+O93yL9dIz4cFwNlT0F6KPzA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 28 Jul 2024 09:55:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"message\": \"Post deleted successfully\",\n    \"data\": {\n        \"id\": \"ebc2028c-6dd9-4d1d-ab7f-3273ecc88dc7\",\n        \"title\": \"post 1\",\n        \"content\": \"content 1\",\n        \"published\": false,\n        \"authorId\": \"e30d9b33-747b-453d-9897-94fcb8838775\",\n        \"createdAt\": \"2024-07-28T09:53:58.090Z\",\n        \"updatedAt\": \"2024-07-28T09:53:58.090Z\"\n    }\n}"
+				}
+			]
 		},
 		{
 			"name": "Logout",
@@ -703,7 +1354,62 @@
 				},
 				"url": "{{URL}}/auth/logout"
 			},
-			"response": []
+			"response": [
+				{
+					"id": "2d2283ab-519d-4e21-a7c9-41724cf3aa4c",
+					"name": "Logout",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"hehe@gmail.com\",\r\n    \"password\" : \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/auth/logout"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "47"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2f-XCmumJ7TdacBqc9HfJHavHgYOgQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 28 Jul 2024 09:55:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"message\": \"Logged out successfully\",\n    \"data\": []\n}"
+				}
+			]
 		}
 	]
 }

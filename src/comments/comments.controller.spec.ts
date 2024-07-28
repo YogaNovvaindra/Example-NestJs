@@ -6,7 +6,7 @@ import { HttpException, HttpStatus } from '@nestjs/common';
 describe('CommentsController', () => {
   let commentsController: CommentsController;
   let commentsService: CommentsService;
-  const timestamp = 1690543200000; // Example timestamp
+  const timestamp = 1690543200000;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -117,7 +117,7 @@ describe('CommentsController', () => {
       await expect(commentsController.getCommentsByPostId(postId)).rejects.toThrow(
         new HttpException(
           { message: 'No comments found for this post', data: [] },
-          HttpStatus.NOT_FOUND,
+          HttpStatus.OK,
         ),
       );
     });
