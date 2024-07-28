@@ -20,7 +20,7 @@ export class PostsService {
 
   async getAllPosts() {
     return this.prisma.post.findMany({
-      include: { author: true },
+      orderBy: { updatedAt: 'desc' },
     });
   }
 
@@ -28,27 +28,20 @@ export class PostsService {
     return this.prisma.post.findUnique({
       where: { id },
       include: {
-        author: {
-          select: {
-            id: true,
-            email: true,
-          },
-        },
         comments: {
-          include: {
-            author: {
-              select: {
-                id: true,
-                email: true,
-              },
-            },
-          },
+          select: { id: true, content: true, authorId: true, createdAt: true, updatedAt: true },
+          orderBy: { updatedAt: 'desc' },
         },
       },
     });
   }
 
-  async updatePost(id: string, title: string, content: string, published: boolean) {
+  async updatePost(
+    id: string,
+    title: string,
+    content: string,
+    published: boolean,
+  ) {
     return this.prisma.post.update({
       where: { id },
       data: { title, content, published },
@@ -60,6 +53,4 @@ export class PostsService {
       where: { id },
     });
   }
-
-
 }

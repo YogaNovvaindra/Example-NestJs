@@ -22,14 +22,7 @@ export class CommentsService {
   async getCommentsByPostId(postId: string) {
     return this.prisma.comment.findMany({
       where: { postId },
-      include: {
-        author: {
-          select: {
-            id: true,
-            email: true,
-          },
-        }
-      },
+      orderBy: { updatedAt: 'desc' },
     });
   }
 
